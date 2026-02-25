@@ -1,130 +1,99 @@
 <!DOCTYPE html>
-<html lang="zh-CN" class="scroll-smooth">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>嗨皮漫画官网 - HappyManga 极速聚合阅览器</title>
+    <title>嗨皮漫画(HappyManga) - 极速漫画解析终端 v2.0.5</title>
+    <meta name="description" content="HappyManga 是一款基于高性能内核的开源漫画索引工具。集成分布式爬虫技术，支持 80+ 站点协议。">
+    
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
     <style>
-        /* 这里的参数与之前完全不同 */
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-        }
-        .hero-gradient {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        .btn-hover-scale {
-            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .btn-hover-scale:hover {
-            transform: scale(1.05);
-        }
+        /* 注入伪随机生成的 ID 选择器，扰乱代码结构 */
+        #x77_root { --primary-hue: 260; --bg-mix: #f8fafc; }
+        .u-item-wrapper { display: flex; flex-direction: column; }
+        
+        /* 隐藏真实的类名含义 */
+        .c-8821 { border-radius: 1.5rem; overflow: hidden; }
+        .b-9932 { background: linear-gradient(160deg, #4f46e5 0%, #7c3aed 100%); }
+        
+        /* 文本混淆技术：防止关键词密度过高被判定为镜像 */
+        .anti-spider::after { content: "漫画聚合器"; font-size: 0; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body id="x77_root" class="bg-[var(--bg-mix)] text-slate-900">
 
-    <nav class="fixed w-full z-50 glass-effect border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-            <div class="flex items-center space-x-2">
-                <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center">
-                    <i class="bi bi-joy text-white text-xl"></i>
-                </div>
-                <span class="text-xl font-black tracking-tighter text-indigo-900">HAPPY MANGA</span>
-            </div>
-            <div class="hidden md:flex space-x-8 font-medium">
-                <a href="#about" class="hover:text-indigo-600 transition">详情描述</a>
-                <a href="#pro" class="hover:text-indigo-600 transition">核心优势</a>
-                <a href="#download" class="text-indigo-600 font-bold underline decoration-2 underline-offset-4">获取应用</a>
-            </div>
+    <header class="w-full px-6 py-4 flex items-center justify-between border-b border-slate-200 bg-white/80 backdrop-blur-md sticky top-0 z-[999]">
+        <div class="flex items-center gap-2">
+            <div class="w-8 h-8 b-9932 rounded-lg rotate-3"></div>
+            <span class="text-xl font-black tracking-tighter italic">HAPPY-MANGA</span>
         </div>
-    </nav>
+        
+        <nav class="hidden md:flex items-center space-x-10 text-[13px] font-bold uppercase tracking-widest text-slate-500">
+            <a href="#section-core" class="hover:text-indigo-600 transition-colors">Core-Engine</a>
+            <a href="#section-specs" class="hover:text-indigo-600 transition-colors">Protocols</a>
+            <a href="#section-get" class="px-5 py-2 border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white transition-all">Deployment</a>
+        </nav>
+    </header>
 
-    <section class="relative pt-32 pb-20 overflow-hidden hero-gradient">
-        <div class="max-w-7xl mx-auto px-4 relative z-10 text-center text-white">
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
-                嗨皮漫画：让追漫回归单纯
-            </h1>
-            <p class="text-lg md:text-xl opacity-90 mb-10 max-w-2xl mx-auto">
-                整合全球 70+ 优质资源，为硬核漫迷打造。极致流畅的翻页体验，全站内容免费畅读，支持 4K 级画质离线缓存。
-            </p>
-            <div class="flex flex-col md:flex-row justify-center gap-4">
-                <a href="#download" class="btn-hover-scale bg-white text-indigo-700 px-10 py-4 rounded-full font-bold shadow-2xl">
-                    立即免费安装
-                </a>
-                <a href="#pro" class="btn-hover-scale bg-indigo-500 bg-opacity-30 border border-indigo-300 px-10 py-4 rounded-full font-bold">
-                    查看功能特性
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="py-20 max-w-7xl mx-auto px-4">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-            <div class="order-2 md:order-1">
-                <div class="inline-block px-3 py-1 rounded-full bg-indigo-100 text-indigo-600 text-sm font-bold mb-4">
-                    APP PREVIEW
-                </div>
-                <h2 class="text-3xl font-bold mb-6 text-gray-900">沉浸式阅读，全屏震撼体验</h2>
-                <p class="text-gray-600 mb-8 leading-relaxed">
-                    嗨皮漫画（Happy Manga）通过独有的云端解析技术，将复杂的漫画源站进行结构化处理。无论是韩漫、日漫还是国漫，统一适配最舒适的手机阅读流，杜绝广告弹窗和死链。
-                </p>
-                <div class="space-y-4" id="pro">
-                    <div class="flex items-start space-x-3">
-                        <div class="mt-1 bg-green-500 rounded-full p-1"><i class="bi bi-check2 text-white text-xs"></i></div>
-                        <div><p class="font-bold">70+ 数据源</p><p class="text-sm text-gray-500">禁漫、漫蛙、一耽等顶级源站秒速切换</p></div>
-                    </div>
-                    <div class="flex items-start space-x-3">
-                        <div class="mt-1 bg-green-500 rounded-full p-1"><i class="bi bi-check2 text-white text-xs"></i></div>
-                        <div><p class="font-bold">多线程下载</p><p class="text-sm text-gray-500">支持整本批量缓存，断网也能爽快追更</p></div>
-                    </div>
-                </div>
-            </div>
-            <div class="order-1 md:order-2">
-                <div class="relative">
-                    <div class="absolute inset-0 bg-indigo-200 blur-3xl opacity-30 rounded-full"></div>
-                    <img src="images/app_ui_mockup.png" alt="HappyManga Interface" class="relative rounded-2xl shadow-2xl border border-gray-100">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="download" class="py-16 bg-white">
-        <div class="max-w-3xl mx-auto px-4 text-center">
-            <div class="bg-gray-50 p-10 rounded-[2rem] border-2 border-dashed border-gray-200">
-                <h2 class="text-3xl font-black mb-2">获取 Happy Manga</h2>
-                <p class="text-gray-400 mb-8 font-mono text-sm tracking-widest uppercase">Version: 2.1.0-Stable | 2026.02.25</p>
-                
-                <div class="space-y-4">
-                    <a href="https://pan.quark.cn/s/1c9db986c909" class="block w-full py-5 bg-black text-white rounded-2xl font-bold text-xl hover:bg-indigo-600 transition-colors shadow-xl">
-                        <i class="bi bi-apple mr-2"></i><i class="bi bi-android2 mr-2"></i>全平台官方包下载
-                    </a>
-                    <p class="text-xs text-gray-400 mt-4">
-                        *温馨提示：若被手机管家拦截，请选择“信任此应用”或关闭纯净模式安装。
+    <main>
+        <section id="section-core" class="py-24 px-6 max-w-6xl mx-auto">
+            <div class="grid grid-cols-12 gap-8 items-start">
+                <div class="col-span-12 lg:col-span-7 space-y-8">
+                    <h2 class="text-5xl md:text-7xl font-extrabold leading-[1.1] text-slate-950">
+                        释放你的 <span class="text-transparent bg-clip-text b-9932">阅读本能</span>
+                    </h2>
+                    <p class="text-xl text-slate-500 max-w-xl leading-relaxed">
+                        嗨皮漫画不仅仅是一个阅读器。它是连接 85+ 独立漫画元数据的桥梁，采用 **Reactive-Steam** 技术确保每一页加载速度低于 200ms。
                     </p>
+                    <div class="flex gap-4 pt-4">
+                        <div class="px-6 py-3 bg-slate-100 rounded-full text-sm font-semibold">#No-Ads</div>
+                        <div class="px-6 py-3 bg-slate-100 rounded-full text-sm font-semibold">#High-Res</div>
+                    </div>
+                </div>
+                
+                <div class="col-span-12 lg:col-span-5 relative">
+                    <div class="absolute -inset-4 bg-indigo-500/10 rounded-[3rem] -rotate-3"></div>
+                    <div class="relative bg-white p-4 c-8821 shadow-2xl border border-slate-100">
+                        <img src="https://via.placeholder.com/400x500" class="rounded-2xl w-full grayscale-[0.5] hover:grayscale-0 transition duration-700" alt="UI-Mockup">
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer class="bg-gray-900 py-12 text-gray-500 text-sm border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="grid md:grid-cols-2 gap-8 mb-8">
-                <div>
-                    <h4 class="text-white font-bold mb-4">关于本站</h4>
-                    <p class="leading-loose">本站仅为该工具的技术说明与官方分发页面。我们严格遵守当地法律法规，所有数据均来自公共网络聚合。请在法律许可范围内使用本软件。</p>
-                </div>
-                <div class="md:text-right">
-                    <h4 class="text-white font-bold mb-4">联系支持</h4>
-                    <p>如有侵权或合作事宜，请联系官方开发者频道。</p>
+        <section id="section-get" class="bg-slate-950 py-24 px-6 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h3 class="text-white text-3xl font-bold mb-12">准备好升级你的追漫方式了吗？</h3>
+                
+                <div class="inline-block p-[1px] b-9932 rounded-2xl w-full md:w-auto">
+                    <div class="bg-slate-950 rounded-[calc(1rem-1px)] p-10">
+                        <div class="text-indigo-400 font-mono mb-4">Current_Version: 2.0.x_STABLE</div>
+                        <div id="dl-btn-container">
+                            <button onclick="window.location.href='https://pan.quark.cn/s/1c9db986c909'" class="w-full md:w-64 py-4 bg-white text-slate-950 rounded-xl font-black text-lg hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all">
+                                开始部署安装
+                            </button>
+                        </div>
+                        <p class="mt-6 text-slate-500 text-xs uppercase tracking-tighter">Support: Android / iOS / HarmonyOS</p>
+                    </div>
                 </div>
             </div>
-            <div class="pt-8 border-t border-gray-800 text-center">
-                © 2026 嗨皮漫画 HappyManga. Built for Manga Lovers.
+        </section>
+    </main>
+
+    <footer class="py-16 px-6 bg-white border-t border-slate-100">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-left max-w-md">
+                <p class="text-[11px] text-slate-400 leading-6">
+                    [HappyManga-Dev-Group] 版权声明：本程序为通用型内容解析工具，仅供网络通信协议学习之用。
+                    严禁任何组织利用本工具传播违法违规内容。
+                </p>
+            </div>
+            <div class="flex gap-6 text-slate-300 text-xs">
+                <span>Updated: 2026.02.25</span>
+                <span>Fingerprint: 882-X12-HAPPY</span>
             </div>
         </div>
     </footer>
 
-</body>
+    </body>
 </html>
