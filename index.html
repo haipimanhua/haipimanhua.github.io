@@ -1,0 +1,678 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO优化元标签 -->
+    <title>嗨皮漫画官网-海量独家漫画每日更新-极速流畅的追漫神器</title>
+    <meta name="description" content="嗨皮漫画是一款专为二次元爱好者打造的高清漫画阅读神器。平台汇集全球海量正版资源，涵盖热血、恋爱、奇幻、悬疑等多种题材，国漫、日漫、韩漫一应俱全。采用先进的预加载技术，画质清晰流畅且无广告干扰，支持离线下载和多端同步，为您提供极致的追漫体验。快来嗨皮漫画，开启你的二次元精彩之旅！">
+    <meta name="keywords" content="嗨皮漫画, 嗨皮漫画app, 漫画下载, 免费漫画阅读, 在线漫画阅读, 日漫推荐, 韩漫大全, 国漫正版, 手机看漫画软件, 全彩漫画">
+    <meta name="author" content="嗨皮漫画团队">
+    <link rel="canonical" href="https://haipipi.cc">
+    
+    <!-- Open Graph 社交媒体分享优化 -->
+    <meta property="og:title" content="嗨皮漫画 - 海量正版漫画免费阅读">
+    <meta property="og:description" content="高品质数字漫画平台，海量正版漫画免费阅读">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://haipipi.cc/">
+    <meta property="og:image" content="/haipipi77/226ild.jpg">
+    <link rel="shortcut icon" href="/haipipi77/226ild.jpg" />
+
+    
+    <!-- 结构化数据 - JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "嗨皮漫画",
+        "url": "https://haipipi.cc",
+        "description": "海量正版漫画免费阅读平台",
+        "publisher": {
+            "@type": "Organization",
+            "name": "嗨皮漫画",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://haipipi.cc/logo.png"
+            }
+        }
+    }
+    </script>
+    
+    <!-- 字体和图标 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #fb2855;
+            --primary-dark: #d81b4a;
+            --primary-light: #ff4d7a;
+            --secondary-color: #2d2d3a;
+            --accent-color: #6c63ff;
+            --light-color: #ffffff;
+            --dark-color: #1a1a24;
+            --gray-color: #f5f5f7;
+            --text-color: #333333;
+            --text-light: #666666;
+            --shadow: 0 10px 30px rgba(251, 40, 85, 0.15);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: linear-gradient(135deg, #1a1a24 0%, #2d2d3a 100%);
+            overflow-x: hidden;
+        }
+        
+        /* 装饰元素 */
+        .decoration {
+            position: fixed;
+            z-index: -1;
+            opacity: 0.1;
+        }
+        
+        .circle-1 {
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            top: -200px;
+            right: -200px;
+        }
+        
+        .circle-2 {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #6c63ff, #fb2855);
+            bottom: -100px;
+            left: -100px;
+        }
+        
+        .square {
+            width: 200px;
+            height: 200px;
+            transform: rotate(45deg);
+            background: linear-gradient(45deg, var(--primary-color), transparent);
+            top: 50%;
+            right: 10%;
+        }
+        
+        /* 导航栏 */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 36, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .nav-logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            object-fit: cover;
+            border: 2px solid var(--primary-color);
+        }
+        
+        .nav-logo span {
+            font-size: 1.8rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, var(--primary-color), #ff8e53);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 1px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-menu a {
+            color: var(--light-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--primary-color);
+            background: rgba(251, 40, 85, 0.1);
+        }
+        
+        /* 主内容 */
+        .main-content {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 100px 5% 50px;
+            text-align: center;
+            position: relative;
+        }
+        
+        /* 第一屏 */
+        .hero-section {
+            max-width: 1200px;
+            width: 100%;
+            padding: 2rem;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            margin: 2rem 0;
+        }
+        
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+        
+        .logo-container img {
+            width: 120px;
+            height: 120px;
+            border-radius: 25px;
+            object-fit: cover;
+            border: 5px solid rgba(251, 40, 85, 0.3);
+            box-shadow: 0 15px 35px rgba(251, 40, 85, 0.3);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .logo-container img:hover {
+            transform: translateY(-10px) rotate(5deg);
+            box-shadow: 0 20px 40px rgba(251, 40, 85, 0.4);
+        }
+        
+        .site-title {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, var(--primary-color), #ff8e53, #6c63ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 2px;
+            text-shadow: 0 5px 15px rgba(251, 40, 85, 0.3);
+        }
+        
+        .site-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        
+        /* 按钮网格 */
+        .buttons-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        @media (min-width: 768px) {
+            .buttons-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .download-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem 1rem;
+            background: linear-gradient(135deg, rgba(251, 40, 85, 0.2), rgba(108, 99, 255, 0.2));
+            border-radius: 20px;
+            text-decoration: none;
+            color: white;
+            transition: var(--transition);
+            border: 2px solid rgba(251, 40, 85, 0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .download-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            opacity: 0;
+            z-index: -1;
+            transition: var(--transition);
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(251, 40, 85, 0.4);
+            border-color: transparent;
+        }
+        
+        .download-btn:hover::before {
+            opacity: 1;
+        }
+        
+        .download-btn i {
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .download-btn span {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .btn-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 0.3rem;
+        }
+        
+        /* 第二屏 */
+        .comic-section {
+            max-width: 1200px;
+            width: 100%;
+            margin-top: 5rem;
+            padding: 3rem 2rem;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 3rem;
+            color: white;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5px;
+        }
+        
+        .comic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .comic-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .comic-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(251, 40, 85, 0.2);
+            border-color: var(--primary-color);
+        }
+        
+        .comic-cover {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .comic-info {
+            padding: 1.5rem;
+        }
+        
+        .comic-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+        
+        .comic-author {
+            color: var(--primary-light);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .comic-author i {
+            font-size: 0.9rem;
+        }
+        
+        .comic-desc {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+        
+        /* 页脚 */
+        footer {
+            text-align: center;
+            padding: 2rem 5%;
+            margin-top: 4rem;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .site-title {
+                font-size: 2.5rem;
+            }
+            
+            .buttons-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .comic-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+        }
+        
+        /* 动画 */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .floating {
+            animation: float 5s ease-in-out infinite;
+        }
+        
+        /* 滚动条样式 */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--dark-color);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 装饰元素 -->
+    <div class="decoration circle-1"></div>
+    <div class="decoration circle-2"></div>
+    <div class="decoration square"></div>
+    
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <!-- 注意：这里使用相对路径，请将您的logo图片命名为logo.png并放在同一目录 -->
+            <img src="/haipipi77/241716226ild.jpg" alt="嗨皮漫画logo">
+            <span>嗨皮漫画</span>
+        </div>
+        <div class="nav-menu">
+            <a href="#home">首页</a>
+            <a href="#comics">漫画作品</a>
+            <a href="#download">下载中心</a>
+            <a href="#about">关于我们</a>
+        </div>
+    </nav>
+    
+    <!-- 主内容区域 -->
+    <main class="main-content" id="home">
+        <!-- 第一屏：Logo和下载按钮 -->
+        <section class="hero-section">
+            <div class="logo-container">
+                <!-- 注意：这里使用相对路径，请将您的logo图片命名为logo.png并放在同一目录 -->
+                <img src="/haipipi77/241716226ild.jpg" alt="嗨皮漫画logo" class="floating">
+                <h1 class="site-title">嗨皮漫画</h1>
+                <p class="site-subtitle">海量正版漫画免费阅读，高品质数字漫画平台。支持多终端同步，随时随地享受阅读乐趣。</p>
+            </div>
+            
+            <div class="buttons-grid">
+                <a href="/haipipi77.php" class="download-btn" target="_blank" rel="noopener">
+                    <i class="fab fa-android"></i>
+                    <span>安卓版下载</span>
+                    <span class="btn-label">Android 5.0+</span>
+                </a>
+                
+                <a href="/haipipi77.php" class="download-btn" target="_blank" rel="noopener">
+                    <i class="fab fa-apple"></i>
+                    <span>苹果版下载</span>
+                    <span class="btn-label">iOS 12.0+</span>
+                </a>
+                
+                <a href="/haipipi77.php" class="download-btn" target="_blank" rel="noopener">
+                    <i class="fab fa-windows"></i>
+                    <span>电脑版下载</span>
+                    <span class="btn-label">Windows 10/11</span>
+                </a>
+                
+                <a href="/haipipi77.php" class="download-btn" target="_blank" rel="noopener">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>IPA版下载</span>
+                    <span class="btn-label">iOS 越狱版</span>
+                </a>
+                
+                <a href="/haipipi77.php" class="download-btn" target="_blank" rel="noopener">
+                    <i class="fas fa-globe"></i>
+                    <span>网页版入口</span>
+                    <span class="btn-label">无需下载，直接阅读</span>
+                </a>
+                
+                <a href="/haipipi77.php" class="download-btn" target="_blank" rel="noopener">
+                    <i class="fab fa-apple"></i>
+                    <span>Mac版下载</span>
+                    <span class="btn-label">macOS 10.15+</span>
+                </a>
+            </div>
+        </section>
+        
+        <!-- 第二屏：漫画作品介绍 -->
+        <section class="comic-section" id="comics">
+            <h2 class="section-title">热门漫画作品</h2>
+            
+            <div class="comic-grid">
+                <div class="comic-card">
+                    <img src="/haipipi77/W1.jpg" alt="星辰剑神漫画封面" class="comic-cover">
+                    <div class="comic-info">
+                        <h3 class="comic-title">星辰剑神</h3>
+                        <div class="comic-author">
+                            <i class="fas fa-user-pen"></i>
+                            <span>作者：剑道无极</span>
+                        </div>
+                        <p class="comic-desc">在这片以剑为尊的大陆上，少年林风意外获得上古剑神传承，从此踏上逆天改命之路。从边陲小城到中央神域，一剑斩断万古，一剑破开苍穹。热血战斗，兄弟情谊，红颜相伴，成就无上剑道！</p>
+                    </div>
+                </div>
+                
+                <div class="comic-card">
+                    <img src="/haipipi77/W2.jpg" alt="幻夜恋曲漫画封面" class="comic-cover">
+                    <div class="comic-info">
+                        <h3 class="comic-title">幻夜恋曲</h3>
+                        <div class="comic-author">
+                            <i class="fas fa-user-pen"></i>
+                            <span>作者：梦月琉璃</span>
+                        </div>
+                        <p class="comic-desc">普通高中生苏小暖意外穿越到魔法世界，成为没落贵族千金。在这个充满魔法与奇幻的世界，她邂逅了冷酷的王子、温柔的神官和神秘的黑暗骑士。一段跨越世界的浪漫恋曲，在幻夜中悄然奏响……</p>
+                    </div>
+                </div>
+                
+                <div class="comic-card">
+                    <img src="/haipipi77/W3.jpg" alt="都市异能王漫画封面" class="comic-cover">
+                    <div class="comic-info">
+                        <h3 class="comic-title">都市异能王</h3>
+                        <div class="comic-author">
+                            <i class="fas fa-user-pen"></i>
+                            <span>作者：幻影行者</span>
+                        </div>
+                        <p class="comic-desc">平凡大学生林凡在雷雨夜意外获得雷电异能，从此生活发生翻天覆地的变化。隐藏在都市中的异能组织、神秘的古老家族、来自异世界的威胁……看他如何从一个小人物成长为守护城市的异能之王！</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- 页脚 -->
+    <footer>
+        <div class="footer-links">
+            <a href="#home">首页</a>
+            <a href="#comics">漫画作品</a>
+            <a href="#download">下载中心</a>
+            <a href="#about">关于我们</a>
+            <a href="#privacy">隐私政策</a>
+            <a href="#terms">服务条款</a>
+        </div>
+        <p>© 2026 嗨皮漫画 版权所有 | 联系我们: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="791a1d1a000d3911180909001418171e18571a1614">[email&#160;protected]</a></p>
+        <p>本网站所有漫画内容均为正版授权，侵权必究</p>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // 平滑滚动效果增强
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // 按钮悬停效果增强
+        const downloadButtons = document.querySelectorAll('.download-btn');
+        downloadButtons.forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.05)';
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+        
+        // 滚动时添加导航栏阴影
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.3)';
+                navbar.style.background = 'rgba(26, 26, 36, 0.98)';
+            } else {
+                navbar.style.boxShadow = 'none';
+                navbar.style.background = 'rgba(26, 26, 36, 0.95)';
+            }
+        });
+        
+        // 页面加载动画
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease';
+            
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+        
+        // 卡片悬停效果
+        const comicCards = document.querySelectorAll('.comic-card');
+        comicCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                const cover = this.querySelector('.comic-cover');
+                if (cover) {
+                    cover.style.transform = 'scale(1.05)';
+                }
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                const cover = this.querySelector('.comic-cover');
+                if (cover) {
+                    cover.style.transform = 'scale(1)';
+                }
+            });
+        });
+    </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"ca95edef922d42f98ca95fe3de239e37","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
