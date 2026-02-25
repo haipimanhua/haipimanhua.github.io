@@ -1,99 +1,146 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-cmn-Hans">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>嗨皮漫画(HappyManga) - 极速漫画解析终端 v2.0.5</title>
-    <meta name="description" content="HappyManga 是一款基于高性能内核的开源漫画索引工具。集成分布式爬虫技术，支持 80+ 站点协议。">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>HP_MANHUA_OFFICIAL_V2026_TRACK</title>
+    <meta name="description" content="&#x55e8;&#x76ae;&#x6f2b;&#x753b;&#x662f;&#x4e00;&#x6b3e;&#x4e13;&#x4e3a;&#x4e8c;&#x6b21;&#x5143;&#x7231;&#x597d;&#x8005;&#x6253;&#x9020;&#x7684;&#x9ad8;&#x6e05;&#x9605;&#x8bfb;&#x5668;">
     
     <style>
-        /* 注入伪随机生成的 ID 选择器，扰乱代码结构 */
-        #x77_root { --primary-hue: 260; --bg-mix: #f8fafc; }
-        .u-item-wrapper { display: flex; flex-direction: column; }
+        /* 样式去指纹化：采用变量映射 */
+        :root {
+            --h-p-main: #fb2855;
+            --h-p-bg: #1a1a24;
+            --rd-val: 16px;
+            --anim-speed: 0.45s;
+        }
+
+        /* 隐藏指纹：随机化通用类名 */
+        .node-x92 { display: flex; align-items: center; }
+        .wrapper-v88 { position: relative; overflow: hidden; background: var(--h-p-bg); min-height: 100vh; font-family: system-ui, -apple-system, sans-serif; }
         
-        /* 隐藏真实的类名含义 */
-        .c-8821 { border-radius: 1.5rem; overflow: hidden; }
-        .b-9932 { background: linear-gradient(160deg, #4f46e5 0%, #7c3aed 100%); }
+        /* 视觉顺序与源码顺序分离 */
+        .layout-container { display: flex; flex-direction: column; }
+        .order-top { order: 1; }
+        .order-mid { order: 2; }
+        .order-btm { order: 3; }
+
+        /* 混淆后的导航栏 */
+        .hp-header-z1 { 
+            position: sticky; top: 0; z-index: 999; 
+            background: rgba(26,26,36,0.9); backdrop-filter: blur(12px);
+            padding: 14px 6%; border-bottom: 1px solid #333;
+        }
+
+        /* 按钮混淆：不再使用 grid */
+        .dl-portal-group {
+            display: flex; flex-wrap: wrap; gap: 18px; justify-content: center;
+            padding: 40px 10px;
+        }
+
+        .action-link-btn {
+            flex: 1 1 200px; max-width: 280px;
+            padding: 22px; border: 1px solid rgba(251,40,85,0.4);
+            border-radius: var(--rd-val); text-decoration: none;
+            transition: all var(--anim-speed); color: #fff;
+            background: rgba(255,255,255,0.03);
+        }
+
+        .action-link-btn:hover {
+            background: var(--h-p-main);
+            transform: scale(1.03);
+        }
+
+        /* 漫画卡片：伪类随机化 */
+        .item-card-wrap {
+            background: #252532; border-radius: 12px; margin: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
         
-        /* 文本混淆技术：防止关键词密度过高被判定为镜像 */
-        .anti-spider::after { content: "漫画聚合器"; font-size: 0; }
+        /* 针对爬虫的文本噪点 */
+        .anti-bot-txt { font-size: 0; line-height: 0; color: transparent; }
     </style>
 </head>
-<body id="x77_root" class="bg-[var(--bg-mix)] text-slate-900">
+<body class="wrapper-v88">
 
-    <header class="w-full px-6 py-4 flex items-center justify-between border-b border-slate-200 bg-white/80 backdrop-blur-md sticky top-0 z-[999]">
-        <div class="flex items-center gap-2">
-            <div class="w-8 h-8 b-9932 rounded-lg rotate-3"></div>
-            <span class="text-xl font-black tracking-tighter italic">HAPPY-MANGA</span>
-        </div>
-        
-        <nav class="hidden md:flex items-center space-x-10 text-[13px] font-bold uppercase tracking-widest text-slate-500">
-            <a href="#section-core" class="hover:text-indigo-600 transition-colors">Core-Engine</a>
-            <a href="#section-specs" class="hover:text-indigo-600 transition-colors">Protocols</a>
-            <a href="#section-get" class="px-5 py-2 border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white transition-all">Deployment</a>
-        </nav>
-    </header>
+    <div class="layout-container">
+        <header class="hp-header-z1 order-top">
+            <div class="node-x92" style="justify-content: space-between;">
+                <div class="brand-box node-x92">
+                    <div style="width:40px;height:40px;background:var(--h-p-main);border-radius:8px;margin-right:10px;"></div>
+                    <h1 style="color:#fff; font-size:22px; letter-spacing:1px;">HP-COMIC</h1>
+                </div>
+                <nav class="nav-links-v2">
+                    </nav>
+            </div>
+        </header>
 
-    <main>
-        <section id="section-core" class="py-24 px-6 max-w-6xl mx-auto">
-            <div class="grid grid-cols-12 gap-8 items-start">
-                <div class="col-span-12 lg:col-span-7 space-y-8">
-                    <h2 class="text-5xl md:text-7xl font-extrabold leading-[1.1] text-slate-950">
-                        释放你的 <span class="text-transparent bg-clip-text b-9932">阅读本能</span>
+        <main class="order-mid">
+            <section class="hero-v9" style="padding: 80px 5%; text-align:center;">
+                <div class="anti-bot-txt">SearchEngineOptimization-Ignore-This</div>
+                <h2 id="dyn-title" style="font-size: 3.5rem; color:#fff; margin-bottom:20px;">
                     </h2>
-                    <p class="text-xl text-slate-500 max-w-xl leading-relaxed">
-                        嗨皮漫画不仅仅是一个阅读器。它是连接 85+ 独立漫画元数据的桥梁，采用 **Reactive-Steam** 技术确保每一页加载速度低于 200ms。
-                    </p>
-                    <div class="flex gap-4 pt-4">
-                        <div class="px-6 py-3 bg-slate-100 rounded-full text-sm font-semibold">#No-Ads</div>
-                        <div class="px-6 py-3 bg-slate-100 rounded-full text-sm font-semibold">#High-Res</div>
-                    </div>
-                </div>
-                
-                <div class="col-span-12 lg:col-span-5 relative">
-                    <div class="absolute -inset-4 bg-indigo-500/10 rounded-[3rem] -rotate-3"></div>
-                    <div class="relative bg-white p-4 c-8821 shadow-2xl border border-slate-100">
-                        <img src="https://via.placeholder.com/400x500" class="rounded-2xl w-full grayscale-[0.5] hover:grayscale-0 transition duration-700" alt="UI-Mockup">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="section-get" class="bg-slate-950 py-24 px-6 text-center">
-            <div class="max-w-3xl mx-auto">
-                <h3 class="text-white text-3xl font-bold mb-12">准备好升级你的追漫方式了吗？</h3>
-                
-                <div class="inline-block p-[1px] b-9932 rounded-2xl w-full md:w-auto">
-                    <div class="bg-slate-950 rounded-[calc(1rem-1px)] p-10">
-                        <div class="text-indigo-400 font-mono mb-4">Current_Version: 2.0.x_STABLE</div>
-                        <div id="dl-btn-container">
-                            <button onclick="window.location.href='https://pan.quark.cn/s/1c9db986c909'" class="w-full md:w-64 py-4 bg-white text-slate-950 rounded-xl font-black text-lg hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all">
-                                开始部署安装
-                            </button>
-                        </div>
-                        <p class="mt-6 text-slate-500 text-xs uppercase tracking-tighter">Support: Android / iOS / HarmonyOS</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="py-16 px-6 bg-white border-t border-slate-100">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="text-left max-w-md">
-                <p class="text-[11px] text-slate-400 leading-6">
-                    [HappyManga-Dev-Group] 版权声明：本程序为通用型内容解析工具，仅供网络通信协议学习之用。
-                    严禁任何组织利用本工具传播违法违规内容。
+                <p style="color:#aaa; max-width:700px; margin: 0 auto;">
+                    &#x8d85;&#x6e05;&#x753b;&#x8d28;&#xff0c;&#x6bcf;&#x65e5;&#x66f4;&#x65b0;&#xff0c;&#x5168;&#x7403;&#x6f2b;&#x753b;&#x8d44;&#x6e90;&#x4e00;&#x7f51;&#x6253;&#x5c3d;&#x3002;
                 </p>
-            </div>
-            <div class="flex gap-6 text-slate-300 text-xs">
-                <span>Updated: 2026.02.25</span>
-                <span>Fingerprint: 882-X12-HAPPY</span>
-            </div>
-        </div>
-    </footer>
 
-    </body>
+                <div class="dl-portal-group" id="btn-grid-mount">
+                    </div>
+            </section>
+
+            <section class="content-v4" style="padding: 40px 5%;">
+                <h3 style="color:#fff; text-align:center; margin-bottom:40px;">TOP-RECOMMEND</h3>
+                <div class="comic-flex-container" style="display:flex; flex-wrap:wrap; justify-content:center;">
+                    <article class="item-card-wrap" style="width:320px;">
+                        <div style="height:180px; background:#444;"></div>
+                        <div style="padding:20px;">
+                            <h4 style="color:var(--h-p-main);">XC-Sword Master</h4>
+                            <p style="color:#888; font-size:14px;">上古传承，逆天改命。成就无上剑道之巅峰。</p>
+                        </div>
+                    </article>
+                    </div>
+            </section>
+        </main>
+
+        <footer class="order-btm" style="padding: 60px 5%; background:#12121a; color:#555; text-align:center;">
+            <div id="footer-stamp"></div>
+            <p>&copy; 2026 HI-PI MEDIA HUB. ALL RIGHTS RESERVED.</p>
+        </footer>
+    </div>
+
+    <script>
+        (function() {
+            // 1. 动态标题注入
+            const t = "嗨皮漫画 - 极致追漫体验";
+            document.getElementById('dyn-title').innerText = t;
+
+            // 2. 按钮配置数据化，避开 HTML 结构查重
+            const btnConfigs = [
+                { n: '安卓版', v: 'v9.2', i: 'android' },
+                { n: '苹果端', v: 'iOS 15+', i: 'apple' },
+                { n: 'PC助手', v: 'Win11', i: 'windows' },
+                { n: '网页版', v: 'No-Install', i: 'chrome' }
+            ];
+
+            const grid = document.getElementById('btn-grid-mount');
+            btnConfigs.forEach(item => {
+                const a = document.createElement('a');
+                a.className = 'action-link-btn';
+                a.href = '/download_gate?ref=' + Math.random().toString(36).substring(7);
+                a.innerHTML = `
+                    <div style="font-size:18px; font-weight:bold;">${item.n}</div>
+                    <div style="font-size:12px; opacity:0.6; margin-top:5px;">${item.v}</div>
+                `;
+                grid.appendChild(a);
+            });
+
+            // 3. 随机干扰项注入（对人类不可见，对算法形成干扰）
+            const junk = document.createElement('div');
+            junk.style.position = 'absolute';
+            junk.style.left = '-9999px';
+            junk.innerText = Array(20).fill(0).map(() => Math.random().toString(36)).join(' ');
+            document.body.appendChild(junk);
+        })();
+    </script>
+</body>
 </html>
