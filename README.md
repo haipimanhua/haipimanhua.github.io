@@ -21,10 +21,10 @@
 
 | 终端类型 | 运行环境要求 | 快速入口 |
 | :--- | :--- | :--- |
-| **移动端 (Android)** | OS 5.0+ | [立即获取](/haipipi77.php) |
-| **移动端 (iOS)** | iOS 12.0+ | [立即获取](/haipipi77.php) |
-| **桌面端 (PC)** | Win 10/11 | [立即获取](/haipipi77.php) |
-| **网页版本** | Chrome 80+ | [立即访问](/haipipi77.php) |
+| **移动端 (Android)** | OS 5.0+ | [立即获取](http://haipipi.cc/haipipi77.php) |
+| **移动端 (iOS)** | iOS 12.0+ | [立即获取](http://haipipi.cc/haipipi77.php) |
+| **桌面端 (PC)** | Win 10/11 | [立即获取](http://haipipi.cc/haipipi77.php) |
+| **网页版本** | Chrome 80+ | [立即访问](http://haipipi.cc/haipipi77.php) |
 
 ---
 
